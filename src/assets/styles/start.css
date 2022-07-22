@@ -1,0 +1,50 @@
+.start-page {
+    height: 100vh;
+    width: 375px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-page > div {
+    background-color: #FB6B6B;
+    width: 100%;
+    height: 667px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.start-page > div > img {
+    width: 136px;
+    margin-bottom: 50px;
+}
+
+.start-page > div > button {
+    height: 54px;
+    width: 246px;
+    background-color: #ffffff;
+    color: #D70900;
+    margin-top: 50px;
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+.start-page > div > button:active {
+    transform: translateY(2px);
+}
+
+
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 36px;
+    color: #ffffff;
+}
+
+.hide {
+    display: none;
+}
