@@ -1,0 +1,22 @@
+.flashcard {
+    width: 300px;
+    height: 130px;
+    background-color: #FFFFD4;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.flashcard span {
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+
+}
+
+.flashcard > img {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
