@@ -1,6 +1,8 @@
 import '../assets/styles/content.css';
 import miniLogo from '../assets/images/ZapRecall-Recursos/logo-pequeno.png';
 
+import Card from './Card';
+
 
 export default function Content () {
     let contador = 0;
@@ -12,6 +14,7 @@ export default function Content () {
                         <img src ={miniLogo} alt =''/>
                         <h1>ZapRecall</h1>
                     </div>
+                    <Card />
                     <div className='content-bottom'>
                         <span>{`0/${contador} CONCLUÍDOS`}</span>
                     </div>
