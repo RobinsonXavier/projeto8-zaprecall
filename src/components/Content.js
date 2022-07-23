@@ -15,6 +15,9 @@ export default function Content () {
                         <h1>ZapRecall</h1>
                     </div>
                     <Card />
+                    <Card />
+                    <Card />
+                    <Card />
                     <div className='content-bottom'>
                         <span>{`0/${contador} CONCLUÍDOS`}</span>
                     </div>
