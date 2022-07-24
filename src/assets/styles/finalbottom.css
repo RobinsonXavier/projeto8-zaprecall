@@ -1,0 +1,33 @@
+.final-bottom {
+    width: 100%;
+    height: 170px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.final-bottom img {
+    margin-right: 5px;
+}
+
+.final-title {
+    display: flex;
+}
+
+h2 {
+    font-family: 'Recursive', sans-serif;
+    font-weight: 700;
+}
+
+.final-bottom > span {
+    font-family: 'Recursive', sans-serif;
+    color: #333333;
+    width: 200px;
+    
+}

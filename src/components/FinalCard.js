@@ -2,8 +2,6 @@
 import '../assets/styles/finalcard.css';
 
 export default function FinalCard ({number, finalIcon, final}) {
-
-    console.log(final)
     return (
         <>
             <div className="finalcard">

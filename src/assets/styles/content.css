@@ -33,6 +33,7 @@
     bottom: 0;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -40,6 +41,7 @@
 .content-bottom > span {
     font-family: 'Recursive', sans-serif;
     color: #333333;
+    
 }
 
 .content-title > img {

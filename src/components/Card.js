@@ -6,17 +6,19 @@ import FlashCard from './FlashCard';
 import FinalCard from './FinalCard';
 
 
-export default function Card ({question, answer, number}) {
+export default function Card ({question, answer, number, setCount, count, setIcon, icon, setCheck}) {
     const [flip, setFlip] = React.useState(true);
-    const[click, setClick] = React.useState('');
+    const [click, setClick] = React.useState('');
     const [final, setFinal] = React.useState('');
     const [finalIcon, setFinalIcon] = React.useState('');
 
-    let flashcard = < FlashCard click={click} setClick={setClick} question ={question} 
-                    answer={answer} setFinal={setFinal} setFinalIcon={setFinalIcon}/>;
+
+    let flashcard = < FlashCard click={click} setClick={setClick} question ={question}
+                    answer={answer} setFinal={setFinal} 
+                    setFinalIcon={setFinalIcon} setCount={setCount} count = {count} icon={icon} setIcon={setIcon} setCheck = {setCheck}/>;
 
     if (click !== '') {
-        flashcard = <FinalCard number= {number} finalIcon={finalIcon} final={final}/>;
+        flashcard = <FinalCard number= {number} finalIcon={finalIcon} final={final} />;
     }
     return (
         <> {flip ? 
