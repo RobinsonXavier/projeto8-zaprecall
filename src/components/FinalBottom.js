@@ -1,6 +1,6 @@
 import '../assets/styles/finalbottom.css';
 
-export default function FinalBottom({img, text, title, count, icon}) {
+export default function FinalBottom({img, text, title, count, icon, setIcon, setSwap, setCount}) {
     return (
         <>
             <div className="final-bottom">
@@ -13,6 +13,12 @@ export default function FinalBottom({img, text, title, count, icon}) {
                 <div>
                     {icon.map(element => <img src={element} alt= '' />)}
                 </div>
+                <div onClick={() => {
+                    setIcon([]);
+                    setCount(0);
+                    setSwap(true);
+                }
+                } className='restart'><span>REINICIAR RECALL</span></div>
             </div>
         </>
     )

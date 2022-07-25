@@ -38,6 +38,10 @@
     align-items: center;
 }
 
+.content-bottom img {
+    margin: 0 5px ;
+}
+
 .content-bottom > span {
     font-family: 'Recursive', sans-serif;
     color: #333333;

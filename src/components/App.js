@@ -9,7 +9,7 @@ export default function App () {
 
     return (
         <>
-            {swap === true ? <Start setSwap={setSwap} /> : <Content />}|
+            {swap === true ? <Start setSwap={setSwap} /> : <Content setSwap={setSwap}/>}|
         </>
     )
 }

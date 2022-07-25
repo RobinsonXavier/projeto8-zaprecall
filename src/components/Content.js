@@ -9,7 +9,7 @@ import Card from './Card';
 import FinalBottom from './FinalBottom';
 
 
-export default function Content () {
+export default function Content ({setSwap}) {
     const[count, setCount] = React.useState(0);
     const[icon, setIcon] = React.useState([]);
     const[check, setCheck] = React.useState(0);
@@ -52,9 +52,9 @@ export default function Content () {
     let finalBottom = '';
 
     if(check !== 1) {
-        finalBottom = <FinalBottom icon={icon} count={count} img = {happy} title={'Parabéns!'} text = {'Você não esqueceu de nenhum flashcard!'}/>
+        finalBottom = <FinalBottom setSwap={setSwap} setIcon={setIcon} icon={icon} count={count} setCount={setCount} img = {happy} title={'Parabéns!'} text = {'Você não esqueceu de nenhum flashcard!'}/>
     } else {
-        finalBottom = <FinalBottom icon={icon} count={count} img = {sad} title={'Putz...'} text = {'Ainda faltam alguns...  Mas não desanime!'}/>
+        finalBottom = <FinalBottom setSwap={setSwap} setIcon={setIcon} icon={icon} count={count} setCount={setCount} img = {sad} title={'Putz...'} text = {'Ainda faltam alguns...  Mas não desanime!'}/>
     }
 
     function shuffle () {
