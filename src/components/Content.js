@@ -67,9 +67,10 @@ export default function Content () {
         }
     }
 
-    deck.sort(shuffle);
+    if(count === 0) {
+        deck.sort(shuffle);
+    }
     drawFour(deck);
-
     
     return (
         <>
