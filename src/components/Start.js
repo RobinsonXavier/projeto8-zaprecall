@@ -1,9 +1,7 @@
-import React from 'react';
-
 import '../assets/styles/start.css';
 import logo from '../assets/images/ZapRecall-Recursos/logo.png'
 
-export default function Start ({setSwap}) {
+export default function Start ({setSwap, start}) {
 
     return (
         <>
@@ -12,7 +10,8 @@ export default function Start ({setSwap}) {
                     <img src= {logo} alt='' />
                     <h1>ZapRecall</h1>
                     <button onClick={()=> {
-                        setSwap(false)
+                        setSwap(false);
+                        start();
                     }}>Iniciar Recall!</button>
                 </div>
                 

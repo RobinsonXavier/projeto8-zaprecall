@@ -9,46 +9,12 @@ import Card from './Card';
 import FinalBottom from './FinalBottom';
 
 
-export default function Content ({setSwap}) {
+export default function Content ({setSwap, deck}) {
     const[count, setCount] = React.useState(0);
     const[icon, setIcon] = React.useState([]);
     const[check, setCheck] = React.useState(0);
-    const deck =[
-        {
-            question:'O que é JSX ?',
-            answer:'Uma extensão de linguagem do JavaScript'
-        },
-        {
-            question:'O React é __',
-            answer:'uma biblioteca JavaScript para construção de interfaces'
-        },
-        {
-            question:'Componentes devem iniciar com __',
-            answer:'letra maiúscula'
-        },
-        {
-            question:'Podemos colocar __ dentro do JSX',
-            answer:'expressões'
-        },
-        {
-            question:'O ReactDOM nos ajuda __ ',
-            answer:'interagindo com a DOM para colocar componentes React na mesma'
-        },
-        {
-            question:'Usamos o npm para __',
-            answer:'gerenciar os pacotes necessários e suas dependências'
-        },
-        {
-            question:'Usamos props para __',
-            answer:'passar diferentes informações para componentes '
-        },
-        {
-            question:'Usamos estado (state) para __',
-            answer:'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'
-        }
-    ];
+   
 
-    const finalDeck = [];
     let finalBottom = '';
 
     if(check !== 1) {
@@ -56,21 +22,6 @@ export default function Content ({setSwap}) {
     } else {
         finalBottom = <FinalBottom setSwap={setSwap} setIcon={setIcon} icon={icon} count={count} setCount={setCount} img = {sad} title={'Putz...'} text = {'Ainda faltam alguns...  Mas não desanime!'}/>
     }
-
-    function shuffle () {
-        return Math.random() - 0.5;
-    }
-
-    function drawFour (arr) {
-        for (let i = 0; i < (arr.length) / 2; i++) {
-            finalDeck.push(arr[i]);     
-        }
-    }
-
-    if(count === 0) {
-        deck.sort(shuffle);
-    }
-    drawFour(deck);
     
     return (
         <>
@@ -80,7 +31,7 @@ export default function Content ({setSwap}) {
                         <img src ={miniLogo} alt =''/>
                         <h1>ZapRecall</h1>
                     </div>
-                    {finalDeck.map((deck, index) =>
+                    {deck.map((deck, index) =>
                      <Card key={index} number={index} question={deck.question} answer={deck.answer} 
                      setCount={setCount} count = {count} icon= {icon} setIcon={setIcon} setCheck={setCheck} />)}
                     {count < 4 ? 
