@@ -1,6 +1,6 @@
 import '../assets/styles/finalbottom.css';
 
-export default function FinalBottom({img, text, title, count, icon, setIcon, setSwap, setCount}) {
+export default function FinalBottom({img, text, title, count, icon, setIcon, setSwap, setCount, setDeck, arrayDeck}) {
     return (
         <>
             <div className="final-bottom">
@@ -11,12 +11,13 @@ export default function FinalBottom({img, text, title, count, icon, setIcon, set
                 <span>{text}</span>
                 <span>{`${count}/4 CONCLUÍDOS`}</span>
                 <div>
-                    {icon.map(element => <img src={element} alt= '' />)}
+                    {icon.map((element, index) => <img key={index} src={element} alt= '' />)}
                 </div>
                 <div onClick={() => {
                     setIcon([]);
                     setCount(0);
                     setSwap(true);
+                    setDeck([...arrayDeck])
                 }
                 } className='restart'><span>REINICIAR RECALL</span></div>
             </div>

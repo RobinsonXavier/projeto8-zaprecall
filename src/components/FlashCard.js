@@ -8,7 +8,7 @@ import greenicon from '../assets/images/ZapRecall-Recursos/right.svg';
 
 
 
-export default function FlashCard ({question, answer, setClick, setFinal, setFinalIcon, setCount, count, setIcon, icon, setCheck, click}) {
+export default function FlashCard ({question, answer, setClick, setFinal, setFinalIcon, setCount, count, setIcon, icon, setCheck, click, block, setBlock}) {
     const[flipCard, setFlipCard] = React.useState('');
 
 
@@ -29,6 +29,7 @@ export default function FlashCard ({question, answer, setClick, setFinal, setFin
                             setFinalIcon(redicon);
                             setCount(count + 1);
                             setIcon([...icon, redicon]);
+                            setBlock(block - 1);
                             }
                             } className='button red'>Não lembrei</div>
                         <div onClick={() => {
@@ -37,6 +38,7 @@ export default function FlashCard ({question, answer, setClick, setFinal, setFin
                             setFinalIcon(yellowicon);
                             setCount(count + 1);
                             setIcon([...icon, yellowicon]);
+                            setBlock(block - 1);
                             }
                             } className='button yellow'>Quase não lembrei</div>
                         <div onClick={() => {
@@ -45,6 +47,7 @@ export default function FlashCard ({question, answer, setClick, setFinal, setFin
                             setFinalIcon(greenicon);
                             setCount(count + 1);
                             setIcon([...icon, greenicon]);
+                            setBlock(block - 1);
                             }
                             } className='button green'>Zap!</div>
                     </div>

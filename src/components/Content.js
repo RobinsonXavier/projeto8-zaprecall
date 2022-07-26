@@ -9,18 +9,19 @@ import Card from './Card';
 import FinalBottom from './FinalBottom';
 
 
-export default function Content ({setSwap, deck}) {
+export default function Content ({setSwap, deck, setDeck, arrayDeck}) {
     const[count, setCount] = React.useState(0);
     const[icon, setIcon] = React.useState([]);
     const[check, setCheck] = React.useState(0);
+    const[block, setBlock] = React.useState(0);
    
 
     let finalBottom = '';
 
     if(check !== 1) {
-        finalBottom = <FinalBottom setSwap={setSwap} setIcon={setIcon} icon={icon} count={count} setCount={setCount} img = {happy} title={'Parabéns!'} text = {'Você não esqueceu de nenhum flashcard!'}/>
+        finalBottom = <FinalBottom arrayDeck={arrayDeck} setDeck={setDeck} setSwap={setSwap} setIcon={setIcon} icon={icon} count={count} setCount={setCount} img = {happy} title={'Parabéns!'} text = {'Você não esqueceu de nenhum flashcard!'}/>
     } else {
-        finalBottom = <FinalBottom setSwap={setSwap} setIcon={setIcon} icon={icon} count={count} setCount={setCount} img = {sad} title={'Putz...'} text = {'Ainda faltam alguns...  Mas não desanime!'}/>
+        finalBottom = <FinalBottom arrayDeck={arrayDeck} setDeck={setDeck} setSwap={setSwap} setIcon={setIcon} icon={icon} count={count} setCount={setCount} img = {sad} title={'Putz...'} text = {'Ainda faltam alguns...  Mas não desanime!'}/>
     }
     
     return (
@@ -32,7 +33,7 @@ export default function Content ({setSwap, deck}) {
                         <h1>ZapRecall</h1>
                     </div>
                     {deck.map((deck, index) =>
-                     <Card key={index} number={index} question={deck.question} answer={deck.answer} 
+                     <Card key={index} number={index} block={block} setBlock={setBlock} question={deck.question} answer={deck.answer} 
                      setCount={setCount} count = {count} icon= {icon} setIcon={setIcon} setCheck={setCheck} />)}
                     {count < 4 ? 
                         <div className='content-bottom'>

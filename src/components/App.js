@@ -41,7 +41,8 @@ export default function App () {
     ];
     const [swap, setSwap] = React.useState(true);
     const[deck, setDeck] = React.useState(arrayDeck);
-    
+    console.log(arrayDeck)
+    console.log(deck)
 
     function shuffle () {
         return Math.random() - 0.5;
@@ -56,12 +57,12 @@ export default function App () {
     function start () {
         deck.sort(shuffle);
         drawFour(deck);
-        setDeck([...arrayDeck]);
     }
+
     
     return (
         <>
-            {swap === true ? <Start start={start} setSwap={setSwap} /> : <Content deck={deck} setSwap={setSwap}/>}|
+            {swap === true ? <Start start={start} setSwap={setSwap} /> : <Content arrayDeck={arrayDeck} setDeck={setDeck} deck={deck} setSwap={setSwap}/>}|
         </>
     )
 }

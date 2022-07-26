@@ -6,15 +6,15 @@ import FlashCard from './FlashCard';
 import FinalCard from './FinalCard';
 
 
-export default function Card ({question, answer, number, setCount, count, setIcon, icon, setCheck}) {
+export default function Card ({question, answer, number, setCount, count, setIcon, icon, setCheck, setBlock, block}) {
     const [flip, setFlip] = React.useState(true);
     const [click, setClick] = React.useState(0);
     const [final, setFinal] = React.useState('');
     const [finalIcon, setFinalIcon] = React.useState('');
 
 
-    let flashcard = < FlashCard click={click} setClick={setClick} question ={question}
-                    answer={answer} setFinal={setFinal} click = {click}
+    let flashcard = < FlashCard block={block} setBlock={setBlock} setClick={setClick} question ={question}
+                    answer={answer} setFinal={setFinal} click={click}
                     setFinalIcon={setFinalIcon} setCount={setCount} count = {count}
                     icon={icon} setIcon={setIcon} setCheck = {setCheck}/>;
 
@@ -24,9 +24,9 @@ export default function Card ({question, answer, number, setCount, count, setIco
 
     function restrict () {
 
-        if(click === 0) {
+        if(block === 0) {
             setFlip(false);
-            setClick(click + 1);
+            setBlock(block + 1);
         }
 
     }
@@ -35,7 +35,7 @@ export default function Card ({question, answer, number, setCount, count, setIco
         <> {flip ? 
                 <div className="card">
                     <span>Pergunta {number+1}</span>
-                    <img onClick={() => setFlip(false)} src={arrowButton} alt=''/>
+                    <img onClick={() => restrict()} src={arrowButton} alt=''/>
                 </div> : (flashcard)
         }
             
